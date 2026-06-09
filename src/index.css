@@ -43,3 +43,13 @@ body{
   border: none;
   border-radius: 5px;
 }
+.counter h4{
+  height: 100px;
+  width: 100px;
+  background-color: #d10d0d;
+  border-color: #f5f1f1;
+}
+.counter button{
+  margin: 20px;
+  padding: 20px;
+}
