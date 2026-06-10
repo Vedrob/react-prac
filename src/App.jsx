@@ -21,12 +21,18 @@ function App() {
       role : "Forward Deployed Engineer"
     }];
     const [num,setNum]=useState(0);
+    const [title,setTitle]=useState('');
     function increase(){
       setNum(num+1);
     }
     function decrease(){
       if(num == 0) return num
       setNum(num-1);
+    }
+    function submitHandler(e){
+      e.preventDefault()
+      console.log('form submitted by',title);
+      setTitle('');
     }
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
@@ -50,6 +56,17 @@ function App() {
         >
           +
         </button>
+      </div>
+      <div className=" flex w-100 h-200-20 bg-pink-700 align-center justify-center gap-6">
+        <form onSubmit={(e)=>{
+          submitHandler(e)
+        }}> 
+        <input className=" gap-10 p-20 m-30px"type="text" placeholder='Enter you name' value ={title}
+        onChange={(e)=>{
+          setTitle(e.target.value)
+        }}/>
+        <button>Submit</button>
+        </form>
       </div>
     </div>
   );
